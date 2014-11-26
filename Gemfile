@@ -5,6 +5,8 @@ gem 'rails', '4.0.9'
 
 gem 'haml-rails'
 
+gem 'faker'
+
 gem 'bootstrap-sass', '~> 3.1.1'
 
 # Use sqlite3 as the database for Active Record
