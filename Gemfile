@@ -7,6 +7,8 @@ gem 'haml-rails'
 
 gem 'faker'
 
+gem 'figaro', '1.0'
+
 gem 'devise'
 
 gem 'bootstrap-sass', '~> 3.1.1'

@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-TheatreCommunity::Application.config.secret_key_base = '1b51a88703c1690cacadcdbc69c4d6963f2ce64a2765e008e23afe2168752a0baa6d07c0263b0a5c4091a2a4cf595b018f9e87cd8cb4496317ee85047e4571e4'
+TheatreCommunity::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
