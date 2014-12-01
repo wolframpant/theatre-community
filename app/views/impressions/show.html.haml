@@ -1,0 +1,12 @@
+%h1= @impression.title
+
+%h3= @play.title
+
+%h3= @production.company
+
+%p= @impression.body
+
+- @comments.each do |com|
+  = com.body
+  %br
+

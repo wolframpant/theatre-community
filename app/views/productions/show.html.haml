@@ -1,0 +1,9 @@
+%h1 Production of #{@play.title}
+
+%h3 Company: #{@production.company}
+%h3 Date Opened: #{@production.date_opened}
+%h3 Location: #{@production.city}, #{@production.state}
+
+- @impressions.each do |imp|
+  = link_to imp.title, imp
+  %br

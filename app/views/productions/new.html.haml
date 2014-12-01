@@ -1,0 +1,24 @@
+%h1 Add Production
+
+- form_for @production do |f|
+  = f.label :play
+  %br
+  = f.collection_select :play_id, Play.all, :id, :title
+  %br
+  = f.label :company
+  %br
+  = f.text_field :company, placeholder: 'Company'
+  %br
+  = f.label :date_opened
+  %br
+  = f.date_select :date_opened, :order => [:month, :day, :year], placeholder: 'Date Opened'
+  %br
+  = f.label :city
+  %br
+  = f.text_field :city, placeholder: 'City'
+  %br
+  = f.label :state
+  %br
+  = f.text_field :state, placeholder:'ST', size: 2
+  %br
+  = f.submit 'Submit'

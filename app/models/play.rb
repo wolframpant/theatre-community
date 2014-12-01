@@ -1,5 +1,5 @@
 class Play < ActiveRecord::Base
 
-  has_many :impressions
+   has_many :productions
   
 end

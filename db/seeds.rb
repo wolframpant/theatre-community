@@ -22,6 +22,18 @@ plays = Play.all
 end
 users = User.all
 
+#Create Productions
+50.times do
+  Production.create!(
+    play: plays.sample,
+    company: Faker::Company.name,
+    city: Faker::Address.city,
+    state: Faker::Address.state,
+    date: Faker::Business.credit_card_expiry_date,
+    user: users.sample)
+end
+productions = Production.all
+
 # Create Impressions
 50.times do
   Impression.create!(
@@ -29,6 +41,7 @@ users = User.all
     play: plays.sample,
     title: Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph,
+    production: productions.sample
 )
 end
 impressions = Impression.all
@@ -47,3 +60,4 @@ puts "#{Impression.count} impressions created"
 puts "#{Comment.count} comments created"
 puts "#{Play.count} plays created"
 puts "#{User.count} users created"
+puts "#{Production.count} productions created"

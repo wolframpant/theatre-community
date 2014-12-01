@@ -1,0 +1,6 @@
+%h1 Productions of #{play.title}
+
+- @productions.each do |production|
+  = link_to production.company, play_production_path
+  %br
+

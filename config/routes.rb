@@ -1,5 +1,15 @@
 TheatreCommunity::Application.routes.draw do
   devise_for :users
+  resources :users, only: [:update, :show, :index]
+
+  resources :plays, only: [:create, :destroy, :update, :index, :show] 
+
+  resources :productions, only: [:index, :show, :new, :create, :update, :edit]
+
+  resources :impressions, only: [:create, :update, :edit, :destroy, :new, :index, :show]
+
+  resources :comments, only: [:create, :destroy]
+    
   get "welcome/index"
   get "welcome/about"
 

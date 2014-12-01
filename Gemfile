@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.9'
 
+ruby '2.0.0'
+
 gem 'haml-rails'
 
 gem 'faker'
@@ -12,6 +14,14 @@ gem 'figaro', '1.0'
 gem 'devise'
 
 gem 'bootstrap-sass', '~> 3.1.1'
+
+group :test do
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'email_spec', '~> 1.6.0'
+end
 
 # Use sqlite3 as the database for Active Record
 group :production do

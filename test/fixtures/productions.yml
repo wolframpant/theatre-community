@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Company: MyString
+  Date: 2014-11-29
+  City: MyString
+  State: MyString
+  play_id: 1
+
+two:
+  Company: MyString
+  Date: 2014-11-29
+  City: MyString
+  State: MyString
+  play_id: 1

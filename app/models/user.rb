@@ -6,5 +6,10 @@ class User < ActiveRecord::Base
 
   has_many :impressions
   has_many :comments
-  
+  has_many :productions
+
+  def admin?
+    admin == true
+  end
+ 
 end
