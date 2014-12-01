@@ -18,9 +18,7 @@ feature 'registered user has access' do
     click_on 'New Play'
     click_on 'Add Production'
     expect(page).to have_content('Add Production')
-    select 'New Play', :from => 'play'
     fill_in 'Company', with: 'Long Wharf Theatre'
-    fill_in 'Date Opened', with: '11/28/2014'
     fill_in 'City', with: 'New Haven'
     fill_in 'ST', with: 'CT'
     click_on 'Submit'

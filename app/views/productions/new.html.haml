@@ -1,10 +1,6 @@
-%h1 Add Production
+%h1 Add Production for #{@play.title}
 
-- form_for @production do |f|
-  = f.label :play
-  %br
-  = f.collection_select :play_id, Play.all, :id, :title
-  %br
+= form_for @production do |f|
   = f.label :company
   %br
   = f.text_field :company, placeholder: 'Company'
@@ -20,5 +16,6 @@
   = f.label :state
   %br
   = f.text_field :state, placeholder:'ST', size: 2
+  %br
   %br
   = f.submit 'Submit'
