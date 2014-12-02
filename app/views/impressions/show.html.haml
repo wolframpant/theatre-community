@@ -1,10 +1,11 @@
 %h1= markdown @impression.title
 
-%h3= @play.title
-
 %h3= @production.company
 
 %p= markdown @impression.body
+
+- if policy(Comment.new).create?
+  = link_to 'Add Comment', new_comment_path(impression_id: @impression.id)
 
 - @comments.each do |com|
   = com.body

@@ -8,7 +8,7 @@ TheatreCommunity::Application.routes.draw do
 
   resources :impressions, only: [:create, :update, :edit, :destroy, :new, :index, :show]
 
-  resources :comments, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy, :new]
     
   get "welcome/index"
   get "welcome/about"

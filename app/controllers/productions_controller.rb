@@ -20,7 +20,7 @@ class ProductionsController < ApplicationController
 
   def show
     @production = Production.find(params[:id])
-    @play = Play.find(params[:play_id])
+    @play = Play.find_by(id: @production.play_id)
     @impressions = Impression.where(production_id: @production.id)
   end
 
@@ -32,7 +32,7 @@ class ProductionsController < ApplicationController
   private
 
   def production_params
-    params.require(:production).permit(:company, :date_opened, :city, :state)
+    params.require(:production).permit(:company, :date_opened, :city, :state, :play_id)
   end
 
 end

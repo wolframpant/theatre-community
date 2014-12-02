@@ -15,13 +15,14 @@ class ImpressionsController < ApplicationController
 
   def create
     @impression = Impression.new(impression_params)
+    @production = Production.find_by(id: @impression.production_id)
     authorize @impression
     if @impression.save
       flash[:notice] = 'You have successfully added an impression.'
       redirect_to @impression
     else
       flash[:notice] = 'Please try again.'
-      render :create
+      render :new
     end
   end
 
@@ -46,6 +47,7 @@ class ImpressionsController < ApplicationController
 private
 
   def impression_params
-    params.require(:impression).permit(:title, :body)
+    params.require(:impression).permit(:title, :body, :production_id)
   end
+  
 end

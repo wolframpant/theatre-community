@@ -17,5 +17,6 @@
   %br
   = f.text_field :state, placeholder:'ST', size: 2
   %br
+  = f.hidden_field :play_id, :value => @play.id
   %br
   = f.submit 'Submit'
