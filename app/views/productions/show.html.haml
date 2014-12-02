@@ -4,6 +4,10 @@
 %h3 Date Opened: #{@production.date_opened}
 %h3 Location: #{@production.city}, #{@production.state}
 
+= link_to 'Add Impression', new_impression_path(production_id: @production.id)
+%br
+%br
+
 - @impressions.each do |imp|
-  = link_to imp.title, imp
+  = link_to (markdown imp.title), imp
   %br

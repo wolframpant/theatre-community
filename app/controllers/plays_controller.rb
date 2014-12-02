@@ -1,4 +1,4 @@
-class PlaysController < ActionController::Base
+class PlaysController < ApplicationController
 
   def index
     @plays = Play.all

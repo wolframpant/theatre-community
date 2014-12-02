@@ -1,0 +1,12 @@
+%h1 Add Impression for #{@production.company}
+%br
+= form_for @impression do |f|
+  = f.label :title
+  %br
+  = f.text_field :title, placeholder: 'Title', size: 40
+  %br
+  = f.label :body
+  %br
+  = f.text_area :body, placeholder: 'Body', cols: 140, rows: 15
+  %br
+  = f.submit 'Save and Parse'

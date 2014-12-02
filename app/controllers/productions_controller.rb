@@ -1,12 +1,14 @@
-class ProductionsController < ActionController::Base
+class ProductionsController < ApplicationController
 
   def new
-    @production = Production.new
     @play = Play.find(params[:play_id])
+    @production = Production.new
+    authorize @production
   end
 
   def create
     @production = Production.new(production_params)
+    authorize @production
     if @production.save
       flash[:notice] = 'You have successfully added a production.'
       redirect_to @production

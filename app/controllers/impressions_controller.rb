@@ -1,4 +1,4 @@
-class ImpressionsController < ActionController::Base
+class ImpressionsController < ApplicationController
 
   def show
     @impression = Impression.find(params[:id])
@@ -7,4 +7,45 @@ class ImpressionsController < ActionController::Base
     @comments = Comment.where(impression_id: @impression.id)
   end
 
+  def new
+    @production = Production.find(params[:production_id])
+    @impression = Impression.new
+    authorize @impression
+  end
+
+  def create
+    @impression = Impression.new(impression_params)
+    authorize @impression
+    if @impression.save
+      flash[:notice] = 'You have successfully added an impression.'
+      redirect_to @impression
+    else
+      flash[:notice] = 'Please try again.'
+      render :create
+    end
+  end
+
+  def edit
+    @impression = Impression.find(params[:id])
+    authorize @impression
+  end
+
+  def update
+    @impression = Impression.find(params[:id])
+    authorize @impression
+    if @impression.update_attributes(params.require(:impression).permit(:title, :body))
+      redirect_to play_path
+      flash[:notice] = "Success!"
+    else
+      render :edit
+      flash[:notice] = "Please try again."
+    end
+    
+  end
+
+private
+
+  def impression_params
+    params.require(:impression).permit(:title, :body)
+  end
 end

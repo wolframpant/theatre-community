@@ -7,6 +7,10 @@ ruby '2.0.0'
 
 gem 'haml-rails'
 
+gem 'redcarpet'
+
+gem 'pundit'
+
 gem 'faker'
 
 gem 'figaro', '1.0'
@@ -20,7 +24,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.0'
-  gem 'email_spec', '~> 1.6.0'
+  gem 'email_spec'
 end
 
 # Use sqlite3 as the database for Active Record
