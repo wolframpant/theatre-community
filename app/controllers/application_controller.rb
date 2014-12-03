@@ -8,7 +8,4 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: exception.message
   end
 
-  def hello
-    render text: '<h1>Hello</h1><p>Welcome home</p>'
-  end
 end

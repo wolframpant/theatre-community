@@ -8,6 +8,6 @@
   = link_to 'Add Comment', new_comment_path(impression_id: @impression.id)
 
 - @comments.each do |com|
-  = com.body
+  =  markdown com.body
   %br
 

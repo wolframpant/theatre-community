@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'spec_helper'
 require 'email_spec'
 
 feature "registered users" do
