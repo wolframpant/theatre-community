@@ -5,10 +5,12 @@
 %h3 Location: #{@production.city}, #{@production.state}
 
 - if policy(Impression.new).create?
-  = link_to 'Add Impression', new_impression_path
+  = link_to 'Add Impression', new_impression_path, class: 'btn btn-success'
 %br
 %br
 
 - @impressions.each do |imp|
-  = link_to (markdown imp.title), imp
+  .panel.panel-default
+    .panel-body
+      = link_to (markdown imp.title), imp
   %br

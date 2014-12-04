@@ -1,18 +1,21 @@
+.photo {
+  background: url(eurydice460.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: black;
+}
+
 p {
   margin-right: 300px;
 }
 
 .jumbotron {
-  background-color: #6e6e6e;
+  background-color: 6e6e6e;
   width: 90%;
   margin-right: auto;
   margin-left: auto;
   opacity: 0.6;
-  color: white;
-}
-
-.nav-tabs {
-  color: #ff9900;
+  color: #ff5a09;
 }
 
 .signupbox {
@@ -21,13 +24,11 @@ p {
   width: 60%;
   padding: 30px;
   text-align: center;
-  background-color: #f3843e;
-  opacity: 0.9;
-  color: #393939;
 }
 
 .btn-success {
   background-color: #ff5a09;
+  color: white;
   opacity: 1;
 }
 
@@ -37,4 +38,12 @@ p {
 
 .btn-success:hover {
   background-color: #ff9900;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
 }
