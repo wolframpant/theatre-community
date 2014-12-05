@@ -29,6 +29,36 @@ class ProductionsController < ApplicationController
     @productions = Production.where(play_id: play.id)
   end
 
+  def edit
+    @production = Production.find(params[:id])
+    @play = Play.find_by(:id => @production.play_id)
+  end
+
+  def update
+    @production = Production.find(params[:id])
+    authorize(@production)
+    if @production.update_attributes(production_params)
+      redirect_to @production.play
+      flash[:notice] = "Success!"
+    else
+      render :edit
+      flash[:notice] = "Please try again."
+    end
+  end
+
+  def destroy
+    @production = Production.find(params[:id])
+    authorize(@production)
+    
+    if @production.destroy
+      flash[:notice] = "Your production has been removed."
+      redirect_to plays_path
+    else
+      flash[:error] = "Production couldn't be deleted. Please try again."
+      redirect_to plays_path
+    end
+  end
+
   private
 
   def production_params

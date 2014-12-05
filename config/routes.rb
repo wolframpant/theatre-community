@@ -1,10 +1,10 @@
 TheatreCommunity::Application.routes.draw do
   devise_for :users
-  resources :users, only: [:update, :show, :index]
+  resources :users, only: [:update, :show, :index, :destroy]
 
   resources :plays, only: [:create, :destroy, :update, :index, :show] 
 
-  resources :productions, only: [:index, :show, :new, :create, :update, :edit]
+  resources :productions, only: [:index, :show, :new, :create, :update, :edit, :destroy]
 
   resources :impressions, only: [:create, :update, :edit, :destroy, :new, :index, :show]
 

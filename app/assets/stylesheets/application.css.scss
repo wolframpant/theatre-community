@@ -18,20 +18,28 @@ body {
   background-color: black;
 }
 
-.nav a {
-  color: #f3843e;
+.nav li a:link {
+  color: #bef243;
+}
+
+.nav li a:visited {
+  colord: #bef243;
 }
 
 .nav li a:hover {
-  color: #393939;
+  color: #666699;
+}
+
+.etc {
+  color: #666699;
+  font-weight: 900;
 }
 
 .btn-primary {
-  background-color: #ff5a09;
-  opacity: 1;
+  background-color: #3b4043;
 }
 
 .btn-primary:hover {
-  background-color: #ff9900;
+  background-color: #3b4043;
 }
 

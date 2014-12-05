@@ -1,12 +1,61 @@
 require 'faker'
 
 # Create plays
-12.times do
-  Play.create!(
-    title: Faker::Lorem.sentence,
+Play.create!(
+    title: 'The Clean House',
     body: Faker::Lorem.paragraph
-  )
-end
+)
+
+Play.create!(
+    title: "Dead Man's Cell Phone",
+    body: Faker::Lorem.paragraph
+)
+
+Play.create!(
+    title: 'Dear Elizabeth',
+    body: Faker::Lorem.paragraph
+)
+
+Play.create!(
+    title: 'Demeter in the City',
+    body: Faker::Lorem.paragraph
+)
+
+Play.create!(
+    title: 'Eurydice',
+    body: Faker::Lorem.paragraph
+)
+
+Play.create!(
+    title: 'In the Next Room, or the Vibrator Play',
+    body: Faker::Lorem.paragraph
+)
+
+Play.create!(
+    title: 'Late, A Cowboy Song',
+    body: Faker::Lorem.paragraph
+)
+
+Play.create!(
+    title: 'Melancholy Play',
+    body: Faker::Lorem.paragraph
+)
+
+Play.create!(
+    title: 'The Oldest Boy',
+    body: Faker::Lorem.paragraph
+)
+
+Play.create!(
+    title: 'Passion Play',
+    body: Faker::Lorem.paragraph
+)
+
+Play.create!(
+    title: 'Stage Kiss',
+    body: Faker::Lorem.paragraph
+)
+
 plays = Play.all
 
 
@@ -29,7 +78,7 @@ users = User.all
     company: Faker::Company.name,
     city: Faker::Address.city,
     state: Faker::Address.state,
-    date: Faker::Business.credit_card_expiry_date,
+    date_opened: Faker::Business.credit_card_expiry_date,
     user: users.sample)
 end
 productions = Production.all
@@ -38,11 +87,11 @@ productions = Production.all
 50.times do
   Impression.create!(
     user: users.sample,
-    play: plays.sample,
+    production: productions.sample,
     title: Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph,
-    production: productions.sample
 )
+  Impression.last.play_id = Impression.last.production.play_id
 end
 impressions = Impression.all
 
@@ -53,6 +102,7 @@ impressions = Impression.all
     impression: impressions.sample,
     body: Faker::Lorem.paragraph
   )
+  Comment.last.play_id = Comment.last.impression.play_id
 end
 
 puts "Seed finished"

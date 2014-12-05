@@ -10,7 +10,5 @@
 %br
 
 - @impressions.each do |imp|
-  .panel.panel-default
-    .panel-body
-      = link_to (markdown imp.title), imp
+  = link_to (markdown imp.title), imp
   %br

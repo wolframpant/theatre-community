@@ -5,17 +5,28 @@
   background-color: black;
 }
 
+a:link {
+  color: #bef243;
+}
+
+a:visited {
+  color: #bef243;
+}
+
+a:hover {
+  text-weight: bold;
+}
 p {
   margin-right: 300px;
 }
 
 .jumbotron {
-  background-color: 6e6e6e;
+  background-color: #666699;
   width: 90%;
   margin-right: auto;
   margin-left: auto;
-  opacity: 0.6;
-  color: #ff5a09;
+  opacity: 0.7;
+  color: #000000;
 }
 
 .signupbox {
@@ -27,8 +38,8 @@ p {
 }
 
 .btn-success {
-  background-color: #ff5a09;
-  color: white;
+  background-color: #bef243;
+  color: #3b4043;
   opacity: 1;
 }
 
@@ -37,13 +48,17 @@ p {
 }
 
 .btn-success:hover {
-  background-color: #ff9900;
+  background-color: #3b4043;
 }
 
-a:link {
-  color: white;
+.jumbotron a:link {
+  color: #272b2e;
 }
 
-a:visited {
-  color: white;
+.jumbotron a:visited {
+  color: #272b2e;
+}
+
+.jumbotron a:hover {
+  color: #bef243;
 }

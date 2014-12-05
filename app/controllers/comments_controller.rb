@@ -21,6 +21,17 @@ def create
 end
 
 def destroy
+  @comment = Comment.find(params[:id])
+  @impression = Impression.find_by(:id => @comment.impression_id)
+  authorize(@comment)
+    
+    if @comment.destroy
+      flash[:notice] = "Your comment has been removed."
+      redirect_to @impression
+    else
+      flash[:error] = "Production couldn't be deleted. Please try again."
+      redirect_to @impression
+    end
 
 end
 
