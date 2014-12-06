@@ -5,7 +5,7 @@
 %h3 Location: #{@production.city}, #{@production.state}
 
 - if policy(Impression.new).create?
-  = link_to 'Add Impression', new_impression_path, class: 'btn btn-success'
+  = link_to 'Add Impression', new_impression_path(:production_id => @production.id), class: 'btn btn-success'
 %br
 %br
 

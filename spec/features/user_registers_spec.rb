@@ -5,7 +5,9 @@ feature "registered users" do
 
   scenario "new user signs up" do
     visit root_path
-    click_on('Sign Up')
+    within '.signupbox' do
+      click_on('Sign Up')
+    end
     fill_in 'Name', with: 'Joe Schmoe'
     fill_in 'Email', with: 'abc@example.com'
     fill_in 'Password', with: 'helloworld'
@@ -25,7 +27,7 @@ feature "registered users" do
     within '.actions' do
       click_button('Log in')
     end
-    expect(page).to have_content("Welcome to Ellen's Theatre Community")
+    expect(page).to have_content("Ellen's Theatre Community is a resource")
   end
     
 end

@@ -60,7 +60,6 @@ feature 'registered user has access' do
     click_on 'New Play'
     click_on 'New Company'
     click_on 'New Impression'
-    click_on 'Add Comment'
     fill_in 'Comment', with: "Well, I couldn't disagree with you more."
     click_on 'Save and Parse'
     expect(page).to have_content('You have successfully added a comment')
