@@ -4,7 +4,7 @@ Warden.test_mode!
 
 feature 'owners may delete' do
 
-  xscenario 'owner may delete or edit a production if there are no other impressions' do
+  scenario 'owner may delete or edit a production' do
     user = create(:user)
     play = create(:play)
     production = create(:production, play_id: play.id, user_id: user.id)
@@ -14,15 +14,18 @@ feature 'owners may delete' do
     visit root_path
     click_on 'View Plays'
     click_on 'New Play'
-    expect(page).to have_content 'New Company'
+    click_on 'New Company'
     click_on 'Edit'
     fill_in 'Company', with: 'Newer Company'
     click_on 'Submit'
     expect(page).to have_content('Success!') 
     expect(page).to have_content('Newer Company')
+    
+    click_on 'Newer Company'
+    expect(page).to have_content('Production of')
     click_on 'Delete'
     expect(page).to have_content('Your production has been deleted')
-    expect(page).not_to have_content('New Production')
+    expect(page).not_to have_content('Newer Company')
   end
 
   xscenario 'owner may not delete production if impressions are present' do

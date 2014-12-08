@@ -14,8 +14,5 @@
   %br
   = production.date_opened
   %br
-  - if policy(production).update?
-    = link_to 'Edit', edit_production_path(id: production.id)
-  - if policy(production).destroy?
-    = # link_to 'Delete', {:id => production.id, :controller => 'productions_controller', :action => 'destroy'}, :method => :delete, data: {confirm: 'Do you want to delete this production?'}
+  
   %br

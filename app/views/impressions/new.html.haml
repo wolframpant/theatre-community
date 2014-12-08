@@ -1,5 +1,7 @@
 %h1 Add Impression for #{@production.company} production of #{@production.play.title}
 %br
+= link_to 'Instructions for using Markdown to lay out your impression', 'https://daringfireball.net/projects/markdown/basics'
+%br
 = form_for @impression do |f|
   = f.label :title
   %br
@@ -11,4 +13,5 @@
   %br
   = f.hidden_field :production_id, :value => @production.id
   %br
+  = f.hidden_field :user_id, :value => current_user.id
   = f.submit 'Save and Parse'

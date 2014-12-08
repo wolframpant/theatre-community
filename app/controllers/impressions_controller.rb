@@ -41,7 +41,19 @@ class ImpressionsController < ApplicationController
       render :edit
       flash[:notice] = "Please try again."
     end
+  end
+
+  def destroy
+    @impression = Impression.find(params[:id])
+    authorize(@impression)
     
+    if @impression.destroy?
+      flash[:notice] = "Your impression has been removed."
+      redirect_to production_path
+    else
+      flash[:error] = "Production couldn't be deleted. Please try again."
+      redirect_to production_path
+    end
   end
 
 private
