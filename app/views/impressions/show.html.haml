@@ -1,9 +1,9 @@
 .container
   %h1= markdown @impression.title 
   %br
-  if policy(@impression).update?
+  - if policy(@impression).update?
     = link_to 'Edit', edit_impression_path(:id => @impression.id)
-  if policy(@impression).destroy?
+  - if policy(@impression).destroy?
     = link_to 'Delete', {:id => @impression.id, :action => 'destroy'}, :method => :delete, data: {confirm: 'Do you want to delete this impression?'}
   %br
   %h3= @production.company
@@ -14,12 +14,10 @@
     .col-md-6
       - @comments.each do |com|
         = markdown com.body
-        - if policy(com).destroy?
-          = link_to 'Delete', {:id => com.id, :controller => 'comments_controller', :action => 'destroy'}, :method => :delete, data: {confirm: 'Do you want to delete this comment?'}
         %br
     .col-md-6
       - if policy(Comment.new).create?
-        = form_for Comment.new do |f|
+        - form_for Comment.new do |f|
           = f.label 'Add Comment'
           %br
           = f.text_area :body, placeholder: 'Comment', cols: 50, rows: 3

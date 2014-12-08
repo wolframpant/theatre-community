@@ -105,6 +105,16 @@ impressions = Impression.all
   Comment.last.play_id = Comment.last.impression.play_id
 end
 
+# Create an admin
+User.create!(
+  name: 'Ellen',
+  email: 'llnwlfsn@gmail.com',
+  password: 'helloworld',
+  password_confirmation: 'helloworld',
+  admin: true,
+  confirmed_at: Time.now
+)
+
 puts "Seed finished"
 puts "#{Impression.count} impressions created"
 puts "#{Comment.count} comments created"

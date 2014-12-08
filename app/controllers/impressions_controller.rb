@@ -28,6 +28,8 @@ class ImpressionsController < ApplicationController
 
   def edit
     @impression = Impression.find(params[:id])
+    @production = Production.find_by(id: @impression.production_id)
+    @play = Play.find_by(id: @production.play_id)
     authorize @impression
   end
 
@@ -35,7 +37,7 @@ class ImpressionsController < ApplicationController
     @impression = Impression.find(params[:id])
     authorize @impression
     if @impression.update_attributes(params.require(:impression).permit(:title, :body))
-      redirect_to play_path
+      redirect_to impression_path
       flash[:notice] = "Success!"
     else
       render :edit
@@ -45,14 +47,15 @@ class ImpressionsController < ApplicationController
 
   def destroy
     @impression = Impression.find(params[:id])
+    @production = Production.find_by(id: @impression.production_id)
     authorize(@impression)
     
-    if @impression.destroy?
+    if @impression.destroy
       flash[:notice] = "Your impression has been removed."
-      redirect_to production_path
+      redirect_to @production
     else
-      flash[:error] = "Production couldn't be deleted. Please try again."
-      redirect_to production_path
+      flash[:error] = "Impression couldn't be deleted. Please try again."
+      redirect_to @impression
     end
   end
 
