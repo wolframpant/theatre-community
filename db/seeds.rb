@@ -90,8 +90,7 @@ productions = Production.all
     production: productions.sample,
     title: Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph,
-)
-  Impression.last.play_id = Impression.last.production.play_id
+  )
 end
 impressions = Impression.all
 
@@ -100,9 +99,8 @@ impressions = Impression.all
   Comment.create!(
     user: users.sample,
     impression: impressions.sample,
-    body: Faker::Lorem.paragraph
+    body: Faker::Lorem.paragraph,
   )
-  Comment.last.play_id = Comment.last.impression.play_id
 end
 
 # Create an admin
