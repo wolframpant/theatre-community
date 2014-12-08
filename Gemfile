@@ -27,6 +27,7 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'email_spec'
+  gem 'shoulda-matchers', require: false
 end
 
 # Use sqlite3 as the database for Active Record

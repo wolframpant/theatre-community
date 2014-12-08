@@ -2,9 +2,9 @@ class ImpressionsController < ApplicationController
 
   def show
     @impression = Impression.find(params[:id])
-    @play = Play.find_by(id: @impression.play_id)
-    @production = Production.find_by(id: @impression.production_id)
-    @comments = Comment.where(impression_id: @impression.id)
+    @production = @impression.production
+    @play = @production.play
+    @comments = @impression.comments
   end
 
   def new

@@ -84,25 +84,25 @@ end
 productions = Production.all
 
 # Create Impressions
-50.times do
+250.times do
   Impression.create!(
     user: users.sample,
     production: productions.sample,
     title: Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph,
 )
-  Impression.last.play_id = Impression.last.production.play_id
 end
 impressions = Impression.all
 
 # Create Comments
-100.times do
+500.times do
+  impression = impressions.sample
   Comment.create!(
     user: users.sample,
-    impression: impressions.sample,
-    body: Faker::Lorem.paragraph
+    impression: impression,
+    body: Faker::Lorem.paragraph,
+    play: impression.play
   )
-  Comment.last.play_id = Comment.last.impression.play_id
 end
 
 # Create an admin

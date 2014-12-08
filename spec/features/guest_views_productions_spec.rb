@@ -5,7 +5,7 @@ feature 'guest views productions' do
   scenario 'allows non-logged-in user to view production information' do
     play = create(:play)
     production = create(:production, play_id: play.id)
-    impression = create(:impression, production_id: production.id, play_id: play.id)
+    impression = create(:impression, production_id: production.id)
     comment = create(:comment, impression_id: impression.id)
     visit root_path
     click_on('View Plays')
