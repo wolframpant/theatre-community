@@ -1,20 +1,22 @@
-%h1 Production of #{@play.title}
+.container  
 
-%h3 Company: #{@production.company}
-%h3 Date Opened: #{@production.date_opened}
-%h3 Location: #{@production.city}, #{@production.state}
+  %h1 Production of #{@play.title}
 
-- if policy(@production).update?
-  = link_to 'Edit', edit_production_path(id: @production.id)
-- if policy(@production).destroy?
-  = link_to 'Delete', {:id => @production.id, :action => 'destroy'}, :method => :delete, data: {confirm: 'Do you want to delete this production?'}
+  %h3 Company: #{@production.company}
+  %h3 Date Opened: #{@production.date_opened}
+  %h3 Location: #{@production.city}, #{@production.state}
 
-- if policy(Impression.new).create?
-  = link_to 'Add Impression', new_impression_path(:production_id => @production.id), class: 'btn btn-success'
-%br
-%br
+  - if policy(@production).update?
+    = link_to 'Edit', edit_production_path(id: @production.id)
+  - if policy(@production).destroy?
+    = link_to 'Delete', {:id => @production.id, :action => 'destroy'}, :method => :delete, data: {confirm: 'Do you want to delete this production?'}
 
-- @impressions.each do |imp|
-  %p= link_to (markdown imp.title), imp
- 
-  
+  - if policy(Impression.new).create?
+    = link_to 'Add Impression', new_impression_path(:production_id => @production.id), class: 'btn btn-success'
+  %br
+  %br
+
+  - @impressions.each do |imp|
+    %p= link_to (markdown imp.title), imp
+   
+    

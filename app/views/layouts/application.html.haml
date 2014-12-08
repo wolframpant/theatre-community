@@ -7,28 +7,29 @@
     = csrf_meta_tags 
 
   %body
-    %h1.etc ELLEN'S THEATRE COMMUNITY
     .container
-      %ul.nav.nav-tabs
-        %li
-          = link_to 'Home', welcome_index_path
-        %li
-          = link_to 'About', welcome_about_path
-        %li
-          = link_to 'View Plays', plays_path
+      %h1.etc ELLEN'S THEATRE COMMUNITY
+      .container
+        %ul.nav.nav-tabs
+          %li
+            = link_to 'Home', welcome_index_path
+          %li
+            = link_to 'About', welcome_about_path
+          %li
+            = link_to 'View Plays', plays_path
 
-        .pull-right.user-info
-          - if current_user
-            = link_to current_user.name || current_user.email, edit_user_registration_path
-            = link_to edit_user_registration_path, class: 'btn btn-primary bt-sm' do
-              %span.glyphicon.glyphicon-user
-            = link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' do
-              %span.glyphicon.glyphicon-log-out
-          - else
-            = link_to 'Sign In', new_user_session_path
-            = link_to 'Sign Up', new_user_registration_path
+          .pull-right.user-info
+            - if current_user
+              = link_to current_user.name || current_user.email, edit_user_registration_path
+              = link_to edit_user_registration_path, class: 'btn btn-primary bt-sm' do
+                %span.glyphicon.glyphicon-user
+              = link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' do
+                %span.glyphicon.glyphicon-log-out
+            - else
+              = link_to 'Sign In', new_user_session_path
+              = link_to 'Sign Up', new_user_registration_path
 
-    %p= flash[:notice] if flash[:notice]
+      %p= flash[:notice] if flash[:notice]
 
-    = yield
+      = yield
 

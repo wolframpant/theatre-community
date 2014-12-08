@@ -1,22 +1,24 @@
-%h1 Add Production for #{@play.title}
+.container
 
-= form_for @production do |f|
-  = f.label :company
-  %br
-  = f.text_field :company, placeholder: 'Company'
-  %br
-  = f.label :date_opened
-  %br
-  = f.date_select :date_opened, :order => [:month, :day, :year], placeholder: 'Date Opened'
-  %br
-  = f.label :city
-  %br
-  = f.text_field :city, placeholder: 'City'
-  %br
-  = f.label :state
-  %br
-  = f.text_field :state, placeholder:'ST', size: 2
-  %br
-  = f.hidden_field :play_id, :value => @play.id
-  %br
-  = f.submit 'Submit'
+  %h1 Add Production for #{@play.title}
+
+  = form_for @production do |f|
+    = f.label :company
+    %br
+    = f.text_field :company, placeholder: 'Company'
+    %br
+    = f.label :date_opened
+    %br
+    = f.date_select :date_opened, :order => [:month, :day, :year], placeholder: 'Date Opened'
+    %br
+    = f.label :city
+    %br
+    = f.text_field :city, placeholder: 'City'
+    %br
+    = f.label :state
+    %br
+    = f.text_field :state, placeholder:'ST', size: 2
+    %br
+    = f.hidden_field :play_id, :value => @play.id
+    %br
+    = f.submit 'Submit'

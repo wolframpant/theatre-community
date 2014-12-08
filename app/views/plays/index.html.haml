@@ -1,8 +1,9 @@
-%h1 Sarah Ruhl's Plays
+.container
+  %h1 Sarah Ruhl's Plays
 
-- @plays.each do |p|
-  = link_to p.title, p
-  %br
-  %br
+  - @plays.each do |p|
+    = link_to p.title, p
+    %br
+    %br
 
   
