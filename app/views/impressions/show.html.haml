@@ -1,5 +1,7 @@
 .container
-  %h1= markdown @impression.title 
+
+  %h1 Production of #{@play.title} by #{@production.company}
+  %h2= markdown @impression.title 
   %br
   - if policy(@impression).update?
     = link_to 'Edit', edit_impression_path(:id => @impression.id)
@@ -12,6 +14,9 @@
 
   .row
     .col-md-6
+
+      %h3 Comments
+
       - @comments.each do |com|
         = markdown com.body
         %br

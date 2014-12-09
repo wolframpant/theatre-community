@@ -1,32 +1,33 @@
 
 a:link {
-  color: #ff6633;
+  color: #00ff80;
 }
 
 a:visited {
-  color: #b36666;
+  color: #00ff80;
 }
 
 a:hover {
   text-weight: bold;
 }
+
 p {
   margin-right: 300px;
 }
 
 .jumbotron {
   padding: 50px;
-  background-color: #666699;
+  background-color: #8000ff;
   width: 100%;
   opacity: 0.7;
-  color: #000000;
+  color: #00ffff;
 }
 
 .photo {
   background: url(eurydice460trans.png);
   background-size: 100%;
   background-repeat: no-repeat;
-  background-color: #666699;
+  background-color: #7a7aff;
 }
 
 .signupbox {
@@ -38,7 +39,7 @@ p {
 }
 
 .btn-success {
-  background-color: #b36666;
+  background-color: #ffff7a;
   opacity: 1;
 }
 
@@ -47,7 +48,7 @@ p {
 }
 
 .btn-success:hover {
-  background-color: #bc6680;
+  background-color: #ffff3d;
 }
 
 

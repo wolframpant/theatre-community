@@ -6,9 +6,10 @@
 
   %p= @play.body
 
+  %h3 Productions
+
   - @productions.each do |production|
-    = link_to production.company, production_path(play_id: @play.id)
-    %br
+    = link_to production.company, production
     = production.city
     ,
     = production.state

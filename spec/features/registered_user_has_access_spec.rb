@@ -8,7 +8,7 @@ feature 'registered user has access' do
     user = create(:user)
     play = create(:play)
     production = create(:production, play_id: play.id)
-    impression = create(:impression, play_id: play.id, production_id: production.id)
+    impression = create(:impression, production_id: production.id)
     comment = create(:comment, impression_id: impression.id)
 
     login_as(user, :scope => :user)
@@ -29,7 +29,7 @@ feature 'registered user has access' do
     user = create(:user)
     play = create(:play)
     production = create(:production, play_id: play.id)
-    impression = create(:impression, play_id: play.id, production_id: production.id)
+    impression = create(:impression, production_id: production.id)
     comment = create(:comment, impression_id: impression.id)
 
     login_as(user, :scope => :user)
@@ -50,7 +50,7 @@ feature 'registered user has access' do
     user = create(:user)
     play = create(:play)
     production = create(:production, play_id: play.id)
-    impression = create(:impression, play_id: play.id, production_id: production.id)
+    impression = create(:impression, production_id: production.id)
     comment = create(:comment, impression_id: impression.id)
 
     login_as(user, :scope => :user)
