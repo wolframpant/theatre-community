@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20141208202807) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "play_id"
     t.integer  "user_id"
     t.integer  "production_id"
   end

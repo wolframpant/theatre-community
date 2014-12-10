@@ -84,7 +84,7 @@ end
 productions = Production.all
 
 # Create Impressions
-50.times do
+250.times do
   Impression.create!(
     user: users.sample,
     production: productions.sample,
@@ -95,7 +95,7 @@ end
 impressions = Impression.all
 
 # Create Comments
-100.times do
+500.times do
   Comment.create!(
     user: users.sample,
     impression: impressions.sample,

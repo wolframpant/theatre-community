@@ -3,9 +3,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.9'
 
-ruby '2.0.0'
+ruby '2.1.1'
 
 gem 'haml-rails'
+
+gem 'nokogiri', '1.6.3.1'
 
 gem 'redcarpet'
 
