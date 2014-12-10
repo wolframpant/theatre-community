@@ -15,10 +15,13 @@
     = link_to 'Add Impression', new_impression_path(:production_id => @production.id), class: 'btn btn-success'
   %br
   %br
+  .row
+    .col-md-9
+      %h3 Impressions
 
-  %h3 Impressions
-
-  - @impressions.each do |imp|
-    %p= link_to (markdown imp.title), imp
+      - @impressions.each do |imp|
+        %p= link_to (markdown imp.title), imp
    
-    
+    .col-md-6.playimage[@play]
+        
+      
