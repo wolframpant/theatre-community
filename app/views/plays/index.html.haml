@@ -1,9 +1,14 @@
-.container
-  %h1 Sarah Ruhl's Plays
+.playscontainer
+  %ul.accordion#accordion
+    - @plays.each do |play|
+      %li[play]
+        .heading= play.title
+        .bgDescription
+        .description
+          %h2= link_to play.title, play
+          %p= play.body
+          =link_to 'More', play 
 
-  - @plays.each do |p|
-    = link_to p.title, p
-    %br
-    %br
+= javascript_include_tag "plays", "data-turbolinks-track" => true 
 
-  
+   

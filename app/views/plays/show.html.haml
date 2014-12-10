@@ -1,4 +1,4 @@
-.container
+.playscontainer
   %h1= @play.title
 
   -if current_user
@@ -10,6 +10,7 @@
 
   - @productions.each do |production|
     = link_to production.company, production
+    %br
     = production.city
     ,
     = production.state
