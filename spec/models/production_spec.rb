@@ -9,6 +9,8 @@ RSpec.describe Production, :type => :model do
     it 'should belong to play', focus: true do
       expect(Production.new).to belong_to(:play)
     end
+    it 'should belong to a user', focus: true do
+      expect(Production.new).to belong_to(:user)
+    end
   end
-
 end

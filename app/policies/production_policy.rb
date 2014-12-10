@@ -1,10 +1,10 @@
 class ProductionPolicy < ApplicationPolicy
 
   def destroy?
-    if record.impressions
+    if record.impressions.exists?
       false
     else
-      user.present? && (record.user_id == user.id || user.admin?)
+      user.present? && ((record.user_id == user.id) || user.admin?)
     end
   end
 
