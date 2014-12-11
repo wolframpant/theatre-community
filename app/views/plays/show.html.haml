@@ -1,21 +1,25 @@
-.playscontainer
-  %h1= @play.title
+.container.plays
+  .row
+    .col-md-6
+  
+      %h1= @play.title
 
-  -if current_user
-    = link_to 'Add Production', new_production_path(play_id: @play.id)
+      -if current_user
+        = link_to 'Add Production', new_production_path(play_id: @play.id)
+        
+      %p= @play.body
 
-  %p= @play.body
+      %h3 Productions
 
-  %h3 Productions
-
-  - @productions.each do |production|
-    = link_to production.company, production
-    %br
-    = production.city
-    ,
-    = production.state
-    %br
-    = production.date_opened
-    %br
-    
-    %br
+      - @productions.each do |production|
+        = link_to production.company, production
+        %br
+        = production.city
+        ,
+        = production.state
+        %br
+        = production.date_opened
+        %br
+        %br
+    .col-md-6
+      .playimage[@play]

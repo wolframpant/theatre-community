@@ -9,7 +9,7 @@ $(function() {
     },
     function () {
       var $this = $(this);
-      $this.stop().animate({'width':'55px'},500);
+      $this.stop().animate({'width':'70px'},500);
       $('.heading',$this).stop(true,true).fadeIn();
       $('.description',$this).stop(true,true).fadeOut(500);
       $('.bgDescription',$this).stop(true,true).slideUp(700);

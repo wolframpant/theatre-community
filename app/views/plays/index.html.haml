@@ -1,4 +1,5 @@
 .playscontainer
+   
   %ul.accordion#accordion
     - @plays.each do |play|
       %li[play]
@@ -8,6 +9,8 @@
           %h2= link_to play.title, play
           %p= play.body
           =link_to 'More', play 
+          
+  - javascript_include_tag "plays", "data-turbolinks-track" => true 
 
 
 

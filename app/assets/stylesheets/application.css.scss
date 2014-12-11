@@ -19,15 +19,16 @@ body {
 }
 
 .nav li a:link {
-  color: #FFFF7A;
+  color: #FF0080;
 }
 
 .nav li a:visited {
-  color: #FFFF7A;
+  color: #FF0080;
 }
 
-.nav li a:hover {
+.nav.nav ul li a:hover {
   text-weight: bold;
+  color: #FF0080;
 }
 
 .etc {
@@ -43,3 +44,73 @@ body {
   background-color: #FF0080;
 }
 
+.playimage {
+  width: 480px;
+  height: 480px;
+}
+
+.playimage#play_1 {
+  background: url(TheCleanHouse.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.playimage#play_2 {
+  background: url(DeadManCell.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.playimage#play_3 {
+  background: url(DearElizabeth2.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.playimage#play_4 {
+  background: url(Demeter.gif);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.playimage#play_5 {
+  background: url(eurydice3.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.playimage#play_6 {
+  background: url(thevibrator.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.playimage#play_7 {
+  background: url(late_a_cowboy.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.playimage#play_8 {
+  background: url(melancholyplay4.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.playimage#play_9 {
+  background: url(theoldestboy2.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.playimage#play_10 {
+  background: url(thepassionplay2.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.playimage#play_11 {
+  background: url(StageKiss1_pic-by-Liz-Lauren_magnum.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
