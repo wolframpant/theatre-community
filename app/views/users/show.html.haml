@@ -1,0 +1,14 @@
+.container
+  %h1 User profile for #{@user.name || @user.email}
+  
+  %p Name: #{@user.name}
+  %h2 Impressions
+    - impressions.each do |imp|
+      %h4= link_to impression.title, impression
+      %p= impression.body 
+    %br
+    
+  %h2 Comments
+    - comments.each do |imp|
+      = link_to 'See Comment in context', comment.impression
+      %p comment.body
