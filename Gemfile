@@ -19,6 +19,10 @@ gem 'figaro', '1.0'
 
 gem 'devise'
 
+gem 'carrierwave'
+
+gem 'mini_magick'
+
 gem 'bootstrap-sass', '~> 3.2.0.2'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'

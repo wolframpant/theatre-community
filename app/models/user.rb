@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :impressions
   has_many :comments
   has_many :productions
+  
+  mount_uploader :avatar, AvatarUploader
 
   def admin?
     admin == true
