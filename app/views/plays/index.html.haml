@@ -3,14 +3,14 @@
   %ul.accordion#accordion
     - @plays.each do |play|
       %li[play]
-        .heading= play.title
+        .heading= link_to play.title, play
         .bgDescription
         .description
           %h2= link_to play.title, play
           %p= play.body
           =link_to 'More', play 
           
-  - javascript_include_tag "plays", "data-turbolinks-track" => true 
+  = javascript_include_tag "plays", "data-turbolinks-track" => true 
 
 
 
