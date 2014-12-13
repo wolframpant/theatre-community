@@ -2,6 +2,9 @@
 
   %h1 Production of #{@play.title} by #{@production.company}
   %h2= markdown @impression.title 
+  %p 
+    Provided by 
+    = link_to @impression.user.name, @impression.user
   %br
   - if policy(@impression).update?
     = link_to 'Edit Impression', edit_impression_path(:id => @impression.id)

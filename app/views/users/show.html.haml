@@ -3,12 +3,12 @@
   
   %p Name: #{@user.name}
   %h2 Impressions
-    - impressions.each do |imp|
-      %h4= link_to impression.title, impression
-      %p= impression.body 
-    %br
+  - @impressions.each do |imp|
+    %h4= link_to imp.title, imp
+    %p= imp.body 
+  %br
     
   %h2 Comments
-    - comments.each do |imp|
-      = link_to 'See Comment in context', comment.impression
-      %p comment.body
+  - @comments.each do |com|
+    = link_to 'See Comment in context', com.impression
+    %p= com.body
