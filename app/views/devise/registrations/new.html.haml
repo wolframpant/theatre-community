@@ -30,7 +30,12 @@
           %br 
           = f.password_field :password_confirmation, autocomplete: "off", placeholder: 'password confirmation' 
           %br
-
+          
+        .form-group
+          = f.label :avatar
+          = f.file_field :avatar 
+          = f.hidden_field :avatar_cache 
+  
         .form-group
           = f.submit "Sign up", class: 'btn btn-success'
           %br

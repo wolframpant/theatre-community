@@ -23,7 +23,7 @@
 
           .pull-right.user-info
             - if current_user
-              = image_tag(current_user.avatar.tiny.url) if current_user.avatar?
+              = image_tag(current_user.avatar.small.url) if current_user.avatar?
               = link_to current_user.name || current_user.email, current_user
               = link_to edit_user_registration_path, class: 'btn btn-primary bt-sm' do
                 %span.glyphicon.glyphicon-user
