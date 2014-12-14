@@ -2,7 +2,6 @@
   .row
     .col-md-6
       %h1 Production of #{@play.title}
-
       %h3 Company: #{@production.company}
       %h3 Date Opened: #{@production.date_opened}
       %h3 Location: #{@production.city}, #{@production.state}
@@ -20,6 +19,15 @@
 
       - @impressions.each do |imp|
         %p= link_to (markdown imp.title), imp
+        %small
+          = image_tag(imp.user.avatar.tiny.url) if imp.user.avatar?
+          submitted
+          = time_ago_in_words(imp.created_at)
+          ago by
+          = link_to((imp.user.name || imp.user.email), imp.user)
+          %br
+          = imp.comments.count
+          comments
 
     .col-md-6.playimage[@play]
 

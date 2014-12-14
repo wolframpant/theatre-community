@@ -13,6 +13,8 @@ gem 'redcarpet'
 
 gem 'pundit'
 
+gem 'fog'
+
 gem 'faker'
 
 gem 'figaro', '1.0'
