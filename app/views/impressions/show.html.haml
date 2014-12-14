@@ -9,7 +9,7 @@
         submitted
         = time_ago_in_words(@impression.created_at)
         ago by
-        = link_to @impression.user.name, @impression.user
+        = link_to ((@impression.user.name || @impression.user.email), @impression.user)
       %br
   - if policy(@impression).update?
     = link_to 'Edit Impression', edit_impression_path(:id => @impression.id)
