@@ -2,33 +2,47 @@
 
   %h1 Production of #{@play.title} by #{@production.company}
   %h2= markdown @impression.title 
-  .row
-    .col-md-8
-      %small
-        = image_tag(@impression.user.avatar.tiny.url) if @impression.user.avatar?
-        submitted
-        = time_ago_in_words(@impression.created_at)
-        ago by
-        = link_to ((@impression.user.name || @impression.user.email), @impression.user)
-      %br
+  %small
+    submitted
+    = time_ago_in_words(@impression.created_at)
+    ago by
+    = image_tag(@impression.user.avatar.tiny.url) if @impression.user.avatar?
+    = link_to((@impression.user.name || @impression.user.email), @impression.user)
+  %br
   - if policy(@impression).update?
     = link_to 'Edit Impression', edit_impression_path(:id => @impression.id)
+  %br
   - if policy(@impression).destroy?
     = link_to 'Delete Impression', {:id => @impression.id, :action => 'destroy'}, :method => :delete, data: {confirm: 'Do you want to delete this impression?'}
   %br
-  %h3= @production.company
+  - if policy(@impression).update?
+    = link_to 'Add Image', new_image_path(:impression_id => @impression.id), class: 'btn btn-success'
+  %br
+  %br
 
   %p= markdown @impression.body
 
-  .row
-    .col-md-7
+  - if @impression.images.exists?
+    %h3 Images
+    %br
+    - @impression.images.each do |pic|
+      .impimage
+        = link_to image_tag(pic.location.thumb.url), pic
+        %br
+        - if policy(pic).destroy?
+          = link_to 'Delete Image', image_path(pic), :method => :delete, data: {confirm: 'Do you want to delete this image?'}
 
-      %h3 Comments
+  .row.comments
+
+    %h3 Comments
+    
+    .col-md-7
 
       - @comments.each do |com|
         = markdown com.body
         - if policy(com).destroy?
           = link_to 'Delete Comment', comment_path(com), :method => :delete, data: {confirm: 'Do you want to delete this comment?'}
+        %br
         %br
 
     .col-md-5

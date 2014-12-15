@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
 def new
-  @pimpression = Impression.find(params[:impression_id])
+  @impression = Impression.find(params[:impression_id])
   @comment = Comment.new
   authorize @comment
 end
@@ -17,7 +17,6 @@ def create
     flash[:notice] = 'Please try again.'
     render :new
   end
-
 end
 
 def destroy
@@ -29,7 +28,7 @@ def destroy
       flash[:notice] = "Your comment has been removed."
       redirect_to @impression
     else
-      flash[:error] = "Production couldn't be deleted. Please try again."
+      flash[:error] = "Comment couldn't be deleted. Please try again."
       redirect_to @impression
     end
 

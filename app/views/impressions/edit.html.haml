@@ -3,6 +3,9 @@
   %br
   = link_to 'Instructions for using Markdown to lay out your impression', 'https://daringfireball.net/projects/markdown/basics'
   %br
+  - if policy(@impression).update?
+    = link_to 'Add Image', new_image_path(:impression_id => @impression.id), class: 'btn btn-success'
+  
   = form_for @impression do |f|
     = f.label :title
     %br
