@@ -15,7 +15,7 @@
   - if policy(@impression).destroy?
     = link_to 'Delete Impression', {:id => @impression.id, :action => 'destroy'}, :method => :delete, data: {confirm: 'Do you want to delete this impression?'}
   %br
-  - if policy(@impression).update?
+  - if policy(Image.new).create?
     = link_to 'Add Image', new_image_path(:impression_id => @impression.id), class: 'btn btn-success'
   %br
   %br
@@ -23,7 +23,8 @@
   %p= markdown @impression.body
 
   - if @impression.images.exists?
-    %h3 Images
+    %h3 Images 
+    %em (click on the thumbnail to see a larger version)
     %br
     - @impression.images.each do |pic|
       .impimage
@@ -32,28 +33,30 @@
         - if policy(pic).destroy?
           = link_to 'Delete Image', image_path(pic), :method => :delete, data: {confirm: 'Do you want to delete this image?'}
 
-  .row.comments
+  .comments
 
-    %h3 Comments
+    %h3  Comments
     
-    .col-md-7
+    .row
 
-      - @comments.each do |com|
-        = markdown com.body
-        - if policy(com).destroy?
-          = link_to 'Delete Comment', comment_path(com), :method => :delete, data: {confirm: 'Do you want to delete this comment?'}
-        %br
-        %br
+      .col-md-7
 
-    .col-md-5
-      - if policy(Comment.new).create?
-        = form_for Comment.new do |f|
-          = f.label 'Add Comment'
+        - @comments.each do |com|
+          = markdown com.body
+          - if policy(com).destroy?
+            = link_to 'Delete Comment', comment_path(com), :method => :delete, data: {confirm: 'Do you want to delete this comment?'}
           %br
-          = f.text_area :body, placeholder: 'Comment', cols: 50, rows: 3
           %br
-          = f.hidden_field :impression_id, :value => @impression.id
-          %br
-          = f.submit "Save and Parse"
+
+      .col-md-5
+        - if policy(Comment.new).create?
+          = form_for Comment.new do |f|
+            = f.label 'Add Comment'
+            %br
+            = f.text_area :body, placeholder: 'Comment', cols: 50, rows: 3
+            %br
+            = f.hidden_field :impression_id, :value => @impression.id
+            %br
+            = f.submit "Save and Parse"
 
 
