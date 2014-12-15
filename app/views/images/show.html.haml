@@ -1,5 +1,10 @@
-%h1 Image for #{@impression.title}
+%h1 Image: "#{@image.name}" for "#{@impression.title}"
 
 .image
+  .row
+    .col-md-11
 
-  = image_tag(@image.location.url)
+      = image_tag(@image.location.url)
+      
+    .col-md-1
+      = link_to 'Back to Impression', impression_path(id:@image.impression_id)

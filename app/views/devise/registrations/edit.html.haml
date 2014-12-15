@@ -14,18 +14,17 @@
               Waiting for confirmation for: 
               = resource.unconfirmed_email 
 
-          .form-group
-            = f.label :password  
-            = f.password_field :password, class: 'form-control', placeholder: 'Enter password'
-            %i (leave blank unless you want to change it)
-          .form-group
-            =f.label :password_confirmation
-            = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Enter password confirmation'
-          .form-group
-            = f.password_field :current_password, class: 'form-control', placeholder: 'Enter password', autocomplete: "off" 
-            %i (we need your current password to confirm your changes)
-          .form-group
-            = f.submit 'Update', class: 'btn btn-success'
+        .form-group
+          = f.label 'Password (leave blank unless you want to change it)'  
+          = f.password_field :password, class: 'form-control', placeholder: 'Enter password'
+        .form-group
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Enter password confirmation'
+        .form-group
+          = f.label 'Password (we need your current password to confirm your changes)'
+          = f.password_field :current_password, class: 'form-control', placeholder: 'Enter password', autocomplete: "off" 
+        .form-group
+          = f.submit 'Update', class: 'btn btn-success'
             
       %h3 Edit personal information
       = form_for(current_user) do |f|
