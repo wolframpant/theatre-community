@@ -2,15 +2,21 @@
   .photo
     .jumbotron
       .margin
-        %h2 Ellen's Theatre Community is a resource for collecting information and user reviews for the plays of Sarah Ruhl.
-      .signupbox
-        %h3 Create and share impressions of productions of Ms. Ruhl's plays, anywhere in the US.
+        %h3 Ever wanted to have a long, meaty discussion about a play you've just seen with a batch of people who also have ideas and observations about it? 
+        %h2 Well, you've come to the right place.
+        %h3 Ellen's Theatre Community is a resource for collecting information and user reviews for the plays of Sarah Ruhl. Engage in communal discussion of theatrical work around the country!
+        
         %br
-        = link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success'
-      .row
-        .col-md-4
-          %h3 View productions, impressions, and comments as a Guest!
-          = link_to 'Guest', welcome_about_path, class: 'btn btn-success'
-        .col-md-4
-          %h3 Create and share productions, impressions, and comments!
-          = link_to 'Register', new_user_registration_path, class: 'btn btn-success'
+        %br
+      - if current_user
+        .playsbtn
+          %h4 Start by selecting a play from Ms. Ruhl's body of work:
+          %h1= link_to 'View Plays', plays_path
+      - else
+        .row
+          .col-md-4
+            %h4 View productions, impressions, and comments as a Guest!
+            = link_to 'Guest', welcome_about_path, class: 'btn btn-success'
+          .col-md-4
+            %h4 Create and share productions, impressions, and comments!
+            = link_to 'Register', new_user_registration_path, class: 'btn btn-success'

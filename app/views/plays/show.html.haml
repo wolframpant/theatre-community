@@ -4,11 +4,11 @@
   
       %h1= @play.title
 
+      %p= @play.body
+
       -if current_user
         = link_to 'Add Production', new_production_path(play_id: @play.id), class: 'btn btn-success'
         
-      %p= @play.body
-
       %h3 Productions
 
       - @productions.each do |production|
