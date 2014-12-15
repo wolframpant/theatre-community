@@ -14,7 +14,7 @@ class ImpressionsController < ApplicationController
   end
 
   def create
-    @impression = Impression.new(impression_params)
+    @impression = Impression.new(impression_params, user_id:current_user.id)
     @production = Production.find_by(id: @impression.production_id)
     authorize @impression
     if @impression.save
@@ -62,7 +62,7 @@ class ImpressionsController < ApplicationController
 private
 
   def impression_params
-    params.require(:impression).permit(:title, :body, :production_id)
+    params.require(:impression).permit(:title, :body, :production_id, :user_id)
   end
   
 end
