@@ -48,6 +48,13 @@
 
         - @comments.each do |com|
           = markdown com.body
+          %small
+            submitted
+            = time_ago_in_words(com.created_at)
+            ago by
+            = image_tag(com.user.avatar.tiny.url) if com.user.avatar?
+            = link_to((com.user.name || com.user.email), com.user)
+            %br
           - if policy(com).destroy?
             = link_to 'Delete Comment', comment_path(com), :method => :delete, data: {confirm: 'Do you want to delete this comment?'}
           %br

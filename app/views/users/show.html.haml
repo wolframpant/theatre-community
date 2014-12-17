@@ -6,11 +6,14 @@
   
   %h2 Impressions
   - @impressions.each do |imp|
-    %h4= link_to imp.title, imp
-    %p= imp.body 
-  %br
-    
+    %h5= link_to imp.title, imp
+    = markdown imp.body 
+    %br
+  %br  
   %h2 Comments
   - @comments.each do |com|
-    = link_to 'See Comment in context', com.impression
-    %p= com.body
+    = com.body
+    %small
+      = link_to 'See Comment in context', com.impression
+    %br
+    %br
