@@ -15,7 +15,7 @@
     .col-md-2
       = link_to 'Back to Production', production_path(id: @impression.production_id)
     .col-md-2
-      - if policy(Image.new).create?
+      - if policy(@impression).update?
         = link_to 'Add Image', new_image_path(:impression_id => @impression.id), class: 'btn btn-success'
     .col-md-2
       - if policy(@impression).update?
@@ -29,7 +29,8 @@
   %p= markdown @impression.body
 
   - if @impression.images.exists?
-    %h3 Images <span class="italic">(click on the thumbnail to see a larger version)</span>
+    %h3 Images 
+    .italic (click on the thumbnail to see a larger version)
     %br
     - @impression.images.each do |pic|
       .impimage

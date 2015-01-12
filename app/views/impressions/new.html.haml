@@ -1,19 +1,25 @@
 .container
-
   %h1 Add Impression for #{@production.company} production of #{@production.play.title}
   %br
   = link_to 'Instructions for using Markdown to lay out your impression', 'https://daringfireball.net/projects/markdown/basics'
   %br
-  = form_for @impression do |f|
-    = f.label :title
-    %br
-    = f.text_field :title, placeholder: 'Title', size: 40
-    %br
-    = f.label :body
-    %br
-    = f.text_area :body, placeholder: 'Body', cols: 140, rows: 15
-    %br
-    = f.hidden_field :production_id, :value => @production.id
-    %br
-    = f.hidden_field :user_id, :value => current_user.id
-    = f.submit 'Save and Format'
+  
+  .row
+    .col-md-9
+      = form_for @impression do |f|
+        = f.label :title
+        %br
+        = f.text_field :title, placeholder: 'Title', size: 40
+        %br
+        = f.label 'Take as much space as you like to give us your impression of this production!'
+        %br
+        = f.text_area :body, placeholder: 'Body', cols: 120, rows: 12
+        %br
+        = f.hidden_field :production_id, :value => @production.id
+        %br
+        = f.hidden_field :user_id, :value => current_user.id
+        = f.submit 'Save'
+
+    .col-md-3
+      = link_to 'Add Image', new_image_path(:impression_id => @impression.id), class: 'btn btn-success'
+      .italic You may add as many images to your impression as you like, either here, in the Edit Impression form, or from the Impression page directly. All of the images you add will also appear on the Production page.

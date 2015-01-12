@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :impressions
   has_many :comments
   has_many :productions
+  has_many :images, through: :impressions
   
   mount_uploader :avatar, AvatarUploader
 

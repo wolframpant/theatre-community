@@ -22,7 +22,6 @@ class ProductionsController < ApplicationController
     @production = Production.find(params[:id])
     @play = Play.find_by(id: @production.play_id)
     @impressions = Impression.where(production_id: @production.id)
-    @images = @production.images
   end
 
   def index
