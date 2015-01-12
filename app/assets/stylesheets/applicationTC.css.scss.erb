@@ -18,6 +18,14 @@ body {
   background-color: #7a7aff;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+}
+
+small {
+  color: white;
+}
+
 .user-info {
   margin-top: 9px;
 }
@@ -25,19 +33,16 @@ body {
 .nav {
   margin-top: 5px;
   font-size: 125%;
+  color: white;
 }
 
-.nav li a:link {
-  color: #FF0080;
+a {
+  color: #ffe77a;
 }
 
-.nav li a:visited {
-  color: #FF0080;
-}
-
-.nav.nav ul li a:hover {
+a:hover {
   text-weight: bold;
-  color: #FF0080;
+  color: #f87ab8;
 }
 
 .etc {
@@ -46,81 +51,100 @@ body {
 }
 
 .btn-primary {
-  background-color: #FF00FF;
-}
-
-.btn-primary:hover {
-  background-color: #FF0080;
+  background-color: #6DBAFF;
+  color: white;
 }
 
 .playimage {
+  float: right;
   height: 480px;
   width: 480px;
-  
 } 
 
 .playimage#play_1 {
   background: url(' <%= asset_path("TheCleanHouse.jpg") %> ');
   background-size: auto 100%;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .playimage#play_2 {
   background: url(' <%= asset_path("DeadManCell.jpg") %> ');
   background-size: auto 100%;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .playimage#play_3 {
   background: url(' <%= asset_path("DearElizabeth2.jpg") %> ');
   background-size: auto 100%;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .playimage#play_4 {
   background: url(' <%= asset_path("Demeter.gif") %> ');
   background-size: auto 100%;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .playimage#play_5 {
   background: url(' <%= asset_path("eurydice3.jpg") %> ');
   background-size: auto 100%;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .playimage#play_6 {
   background: url(' <%= asset_path("thevibrator2.jpg") %> ');
   background-size: auto 100%;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .playimage#play_7 {
   background: url(' <%= asset_path("late_a_cowboy.jpg") %> ');
   background-size: auto 100%;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .playimage#play_8 {
   background: url(' <%= asset_path("melancholyplay4.jpg") %> ');
   background-size: auto 100%;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .playimage#play_9 {
   background: url(' <%= asset_path("theoldestboy2.jpg") %> ');
   background-size: auto 100%;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .playimage#play_10 {
   background: url(' <%= asset_path("thepassionplay2.jpg") %> ');
   background-size: auto 100%;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .playimage#play_11 {
   background: url(' <%= asset_path("StageKiss1_pic-by-Liz-Lauren_magnum.jpg") %> ');
   background-size: auto 100%;
   background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.notices {
+  background-color: #7e25ff;
+  color: white;
+}
+
+.alerts {
+  background-color: #f87ab8;
+  color: white;
 }

@@ -13,6 +13,8 @@
   %br
   .row
     .col-md-2
+      = link_to 'Back to Production', production_path(id: @impression.production_id)
+    .col-md-2
       - if policy(Image.new).create?
         = link_to 'Add Image', new_image_path(:impression_id => @impression.id), class: 'btn btn-success'
     .col-md-2
@@ -21,8 +23,7 @@
     .col-md-2
       - if policy(@impression).destroy?
         = link_to 'Delete Impression', {:id => @impression.id, :action => 'destroy'}, :method => :delete, data: {confirm: 'Do you want to delete this impression?'}
-    .col-md-2
-      = link_to 'Back to Production', production_path(id: @impression.production_id)
+    
   %br
   
   %p= markdown @impression.body

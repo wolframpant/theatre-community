@@ -1,22 +1,21 @@
 .container  
   .row
-    .col-md-6
+    .col-xs-6
       %h1 Production of #{@play.title}
       %h3 Company: #{@production.company}
       %h3 Date Opened: #{@production.date_opened}
       %h3 Location: #{@production.city}, #{@production.state}
-      .col-md-3
+      .col-xs-3
         - if policy(Impression.new).create?
           = link_to 'Add Impression', new_impression_path(:production_id => @production.id), class: 'btn btn-success'
-      .col-md-3
+      .col-xs-3
+        =link_to 'Back to Play', play_path(id: @production.play_id)
+      .col-xs-3
         - if policy(@production).update?
           = link_to 'Edit Production', edit_production_path(id: @production.id)
-      .col-md-3
+      .col-xs-3
         - if policy(@production).destroy?
-          = link_to 'Delete Production', {:id => @production.id, :action => 'destroy'}, :method => :delete, data: {confirm: 'Do you want to delete this production?'}
-      .col-md-3
-        =link_to 'Back to Play', play_path(id: @production.play_id)
-   
+           = link_to 'Delete Production', {:id => @production.id, :action => 'destroy'}, :method => :delete, data: {confirm: 'Do you want to delete this production?'}
       %br
       %br
       %h3 Impressions
@@ -33,5 +32,18 @@
           = imp.comments.count
           comments
 
-    .col-md-6.playimage[@play]
+    .col-xs-6.prodimages
+      - if @production.images.exists?
+        %h3 Images <span class="italic">(click on the thumbnail to see a larger version)</span>
+        %br
+        - @production.images.each do |pic|
+      .prodimage
+        = link_to image_tag(pic.location.thumb.url), pic
+        %br
+        %h5= pic.name
+        %small
+          submitted by #{@pic.user.name}
+        - if policy(pic).destroy?
+          = link_to 'Delete', image_path(pic), :method => :delete, data: {confirm: 'Do you want to delete this image?'}
+      
 

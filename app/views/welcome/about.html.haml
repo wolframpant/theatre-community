@@ -2,7 +2,14 @@
   .photo
     .jumbotron
       %h2 Welcome!
-
       .margin
-        %p Any time you see any production of any play written by Sarah Ruhl, you are invited to come by and leave your impressions. Ideally, you'll also provide details of the production itself--where and when the play was produced, perhaps names of the cast and/or crew, reviews you've found in your local paper, any photographs or other images you can lay your hands on . . .
-        %p Anyone can visit this website and view reviews and details of productions of Ms. Ruhl's plays. Only registered users may post their own reviews, or comment on those of others (remember, play nice! "I had a different experience of this production" is acceptable; "you idiot" is definitely NOT).
+        %p Any time you see any production of any play written by Sarah Ruhl, you are invited to come by and leave your impressions. Ideally, first you'll also provide details of the production itself--where and when the play was produced, perhaps names of the cast and/or crew, reviews you've found in your local paper, any photographs or other images you can lay your hands on . . .
+        %p 
+        - if current_user
+          .playsbtn
+            %h4 Start by selecting a play from Ms. Ruhl's body of work:
+            %h1= link_to 'View Plays', plays_path 
+        - else
+          %p If you'd like to add your own impressions, comments, productions or images, please #{link_to 'Sign Up', new_user_session_path} for our website and then #{link_to 'Sign In', new_user_registration_path}. If you'd just like to see what people have to say, but don't want to make your own contributions at this time, feel free to explore the website as our guest!
+        
+       
