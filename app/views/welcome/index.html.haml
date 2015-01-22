@@ -9,8 +9,9 @@
         %br
         - if current_user
           .playsbtn
-            %h4 Start by selecting a play from Ms. Ruhl's body of work:
-            %h1= link_to 'View Plays', plays_path
+            %i Start by selecting a play from Ms. Ruhl's body of work:
+            .huge
+              = link_to 'View Plays', plays_path
         - else
           .row
             .col-md-4

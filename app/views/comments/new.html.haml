@@ -1,10 +1,12 @@
-%h1 New Comment
+.container
 
-= form_for @comment do |f|
-  = f.label "Comment"
-  %br
-  = f.text_area :body, placeholder: 'Comment', cols: 100, rows: 5
-  %br
-  = f.hidden_field :impression_id, :value => @impression.id
-  %br
-  = f.submit 'Save and Parse'
+  %h1 New Comment for Impression "#{@impression.title}"
+
+  = form_for @comment do |f|
+    %br
+    = f.text_area :body, placeholder: 'Type your comment here', cols: 100, rows: 5
+    %br
+    = f.hidden_field :impression_id, :value => @impression.id
+    = f.hidden_field :user_id, :value => current_user.id
+    %br
+    = f.submit 'Save'

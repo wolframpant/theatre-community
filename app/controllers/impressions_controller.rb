@@ -5,6 +5,7 @@ class ImpressionsController < ApplicationController
     @play = Play.find_by(id: @impression.production.play_id)
     @production = Production.find_by(id: @impression.production_id)
     @comments = Comment.where(impression_id: @impression.id)
+    @comment = Comment.new
   end
 
   def new
@@ -64,5 +65,5 @@ private
   def impression_params
     params.require(:impression).permit(:title, :body, :production_id, :user_id)
   end
-  
+ 
 end

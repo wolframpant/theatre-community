@@ -7,8 +7,9 @@
         %p 
         - if current_user
           .playsbtn
-            %h4 Start by selecting a play from Ms. Ruhl's body of work:
-            %h1= link_to 'View Plays', plays_path 
+            %i Start by selecting a play from Ms. Ruhl's body of work:
+            .huge
+              = link_to 'View Plays', plays_path 
         - else
           %p If you'd like to add your own impressions, comments, productions or images, please #{link_to 'Sign Up', new_user_session_path} for our website and then #{link_to 'Sign In', new_user_registration_path}. If you'd just like to see what people have to say, but don't want to make your own contributions at this time, feel free to explore the website as our guest!
         
