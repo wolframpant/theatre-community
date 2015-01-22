@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @comment.user = current_user
     @impression = Impression.find_by(id: @comment.impression_id)
     authorize @comment
     if @comment.save
