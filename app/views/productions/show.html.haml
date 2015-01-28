@@ -39,7 +39,7 @@
       .italic To add an image for this production (say, a photo of the PlayBill, of the set, or of an actor taken after the show, or perhaps a photo from a local review of the production), please add an impression of your own and then add as many images as you like to that impression.
       - if @production.images.exists?  
         - @production.images.each do |pic|
-          .prodimage
+          .impimage
             = link_to image_tag(pic.location.thumb.url), pic
             %br
             %h5= pic.name
