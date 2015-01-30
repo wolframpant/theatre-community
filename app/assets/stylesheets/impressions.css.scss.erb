@@ -5,7 +5,10 @@
   border-style: double;
   border-width: 2px;
   border-color: #700548;
+  color: #700548;
   margin: 0px 5px 20px 5px;
+  background: url(' <%= asset_path("ricepaper-white.jpg") %> ');
+  background-color: white;
 }
 
 .comments {
@@ -18,18 +21,28 @@
 
 .italic {
   font-style: italic;
+  font-size: 80%;
 }
 
 .impressionstyle {
   font-family: Bookman Old Style, Times New Roman, serif;
+  background: url(' <%= asset_path("ricepaper-white.jpg") %> ');
+  background-color: white;
   color: #700548;
   padding: 10px;
   border-style: double;
   border-width: 0 3px 0 3px;
   border-color: #700548;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .impressionstyle small {
   font-family: Bookman Old Style, Times New Roman, serif;
   color: #700548;
+}
+
+.masks img {
+  width: 125px;
 }

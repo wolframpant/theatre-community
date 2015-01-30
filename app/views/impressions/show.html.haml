@@ -20,16 +20,20 @@
   %h3 
     Impression of #{@production.company}'s production of <span class = "playtitle">#{@play.title}</span>
   .impressionstyle  
-    %h2= markdown @impression.title 
-    %small
-      submitted
-      = time_ago_in_words(@impression.created_at)
-      ago by
-      = image_tag(@impression.user.avatar.tiny.url) if @impression.user.avatar?
-      = link_to((@impression.user.name || @impression.user.email), @impression.user)
+    .row
+      .col-md-10
+        %h2= markdown @impression.title 
+        %small
+          submitted
+          = time_ago_in_words(@impression.created_at)
+          ago by
+          = image_tag(@impression.user.avatar.tiny.url) if @impression.user.avatar?
+          = link_to((@impression.user.name || @impression.user.email), @impression.user)
+      .col-md-2.masks
+        = image_tag("purple-and-white-masks.png")
     %br
     %br
-
+   
     %p= markdown @impression.body
 
   - if @impression.images.exists?
@@ -48,10 +52,10 @@
     - @comments.each do |com|
       = markdown(com.body)
       %small
+        = image_tag(com.user.avatar.tiny.url) if com.user.avatar?
         submitted
         = time_ago_in_words(com.created_at)
         ago by
-        = image_tag(com.user.avatar.tiny.url) if com.user.avatar?
         = link_to((com.user.name || com.user.email), com.user)
         %br
         - if policy(com).destroy?
