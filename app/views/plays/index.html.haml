@@ -3,7 +3,7 @@
   %ul.accordion#accordion
     - @plays.each do |play|
       %li[play]
-        .heading= link_to play.title, play
+        -# .heading= link_to play.title, play
         .bgDescription
         .description
           %h2= link_to play.title, play

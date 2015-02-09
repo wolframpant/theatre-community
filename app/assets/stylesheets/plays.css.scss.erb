@@ -1,12 +1,9 @@
-.container.plays {
-  margin-top:50px auto;
-}
 
 ul.accordion { 
   list-style: none;
-  position: absolute;
-  right: 80px;
-  top: 120px;
+  position: relative;
+  right: 10px;
+  top: 0px;
   font-family: Cambria, serif;
   font-size: 16px;
   font-style: italic;
@@ -23,8 +20,8 @@ ul.accordion a {
 
 ul.accordion li {
   float: right;
-  width: 70px;
-  height: 480px;
+  width: 5%;
+  height: 450px;
   display: block;
   border-right: 2px solid #fff;
   border-bottom: 2px solid #fff;
@@ -88,23 +85,26 @@ ul.accordion li.bleft{
   border-left:2px solid #fff;
 }
 
-ul.accordion li .heading{
+ul.accordion li .heading {
   background-color: #fff;
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);  
+  transform: rotate(90deg);  
   padding: 0px; 
-  margin-top: 200px;
-  opacity:0.7;
+  margin-top: 100px; 
+  opacity: 0.7;
   text-transform: uppercase;
   font-style: normal;
   font-weight: bold;
-  letter-spacing: 1px;
+  line-height: 10px;
   font-size: 10px;
-  text-align: center;
+  /* text-align: center; */
   text-shadow: -1px -1px 1px #ccc;
 }
 
 ul.accordion li .description{
-  position:absolute;
-  width: 480px;
+  position: absolute;
+  width: 90%;
   height: 175px;
   bottom: 0px;
   left: 0px;
@@ -113,11 +113,11 @@ ul.accordion li .description{
 
 ul.accordion li .description h2 a{
   position: relative;
-  text-transform:uppercase;
-  font-style:normal;
-  font-weight:bold;
-  letter-spacing:1px;
-  font-size:20px;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 20px;
   color: #444;
   text-align:left;
   margin: 0px 0px 15px 2px;
