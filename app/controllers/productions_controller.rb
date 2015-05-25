@@ -13,8 +13,8 @@ class ProductionsController < ApplicationController
       flash[:notice] = 'You have successfully added a production.'
       redirect_to @production
     else
-      flash[:notice] = 'Please try again.'
-      render :create
+      flash[:notice] = 'Please try again. Please make sure that the address you provided is valid.'
+      redirect_to :back
     end
   end
 
@@ -24,11 +24,6 @@ class ProductionsController < ApplicationController
     @impressions = Impression.where(production_id: @production.id)
   end
 
-  def index
-    @play = Play.find(params[:play_id])
-    @productions = Production.where(play_id: play.id)
-  end
-
   def edit
     @production = Production.find(params[:id])
     @play = Play.find_by(:id => @production.play_id)
@@ -36,9 +31,10 @@ class ProductionsController < ApplicationController
 
   def update
     @production = Production.find(params[:id])
+    @play = @production.play
     authorize(@production)
     if @production.update_attributes(production_params)
-      redirect_to @production.play
+      redirect_to @play
       flash[:notice] = "Success!"
     else
       render :edit
@@ -62,7 +58,7 @@ class ProductionsController < ApplicationController
   private
 
   def production_params
-    params.require(:production).permit(:company, :date_opened, :city, :state, :play_id)
+    params.require(:production).permit(:company, :date_opened, :address, :city, :state, :country, :play_id, :latitude, :longitude)
   end
 
 end

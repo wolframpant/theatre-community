@@ -7,6 +7,8 @@ ruby '2.1.5'
 
 gem 'haml-rails'
 
+gem 'geocoder'
+
 gem 'nokogiri', '1.6.3.1'
 
 gem 'redcarpet'

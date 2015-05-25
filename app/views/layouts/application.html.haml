@@ -3,6 +3,7 @@
   %head
     %title Ellen's Theatre Community
     %link{:href => "https://fonts.googleapis.com/css?family=Amarante|Ubuntu|Coustard", :rel => "stylesheet", :type => "text/css"}
+    %script{:type => "text/javascript", :src => "https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCp9VwiH2tJfZ05Cjb8d5zF2qTZgsgAQIM"}
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true 
     = javascript_include_tag "application", "data-turbolinks-track" => true 
     = csrf_meta_tags 
@@ -18,6 +19,8 @@
             = link_to 'About', welcome_about_path
           %li
             = link_to 'View Plays', plays_path
+          %li
+            = link_to 'View Map', productions_path
           %li
             = mail_to 'llnwlfsn@gmail.com', 'Contact Us'
           

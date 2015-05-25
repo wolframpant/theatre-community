@@ -1,6 +1,6 @@
 .container
 
-  %h1 Edit Production of #{@production.play.title} by #{@production.company}
+  %h1 Edit Production of #{@play.title} by #{@production.company}
 
   = form_for @production do |f|
     = f.label :company
@@ -11,6 +11,10 @@
     %br
     = f.date_select :date_opened, :order => [:month, :day, :year], placeholder: 'Date Opened'
     %br
+    = f.label :address
+    %br
+    = f.text_field :address, placeholder: 'Address'
+    %br
     = f.label :city
     %br
     = f.text_field :city, placeholder: 'City'
@@ -18,6 +22,10 @@
     = f.label :state
     %br
     = f.text_field :state, placeholder:'ST', size: 2
+    %br
+    = f.label :country
+    %br
+    = f.text_field :country, placeholder: 'Country'
     %br
     = f.hidden_field :play_id, :value => @play.id
     %br
